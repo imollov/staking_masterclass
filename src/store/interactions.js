@@ -1,4 +1,4 @@
-import Contract from '../backEnd/abis/EthStakingPool.json'
+import EthStakingPool from '../backEnd/abis/EthStakingPool.json'
 import Web3 from 'web3'
 import {
   web3Loaded,
@@ -66,7 +66,7 @@ export const loadContract = async (dispatch, web3, netId) => {
     // const contractABI =
     // const contractAddress = ''
     // const contract = new web3.eth.Contract(contractABI, contractAddress)
-    const contract = new web3.eth.Contract(Contract.abi, Contract.networks[netId].address)
+    const contract = new web3.eth.EthStakingPool(EthStakingPool.abi, EthStakingPool.networks[netId].address)
     dispatch(contractLoaded(contract))
     return contract
   } catch (e) {
